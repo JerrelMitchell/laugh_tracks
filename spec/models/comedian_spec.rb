@@ -1,6 +1,6 @@
 RSpec.describe Comedian do
   before(:each) do
-    @comedian1 = Comedian.create(name: 'Ian Douglas', age: 35)
+    @comedian1 = Comedian.create(name: 'Ian Douglas', age: 40)
     @comedian2 = Comedian.create(name: 'David Blatt', age: 30)
   end
 
@@ -15,6 +15,12 @@ RSpec.describe Comedian do
   describe '.age' do
     it 'should return age of given comedian' do
       expect(Comedian.last.age).to eq(30)
+    end
+  end
+
+  describe '.average_age' do
+    it 'should average total of all comedian ages' do
+      expect(Comedian.average_age).to eq(35)
     end
   end
 end
